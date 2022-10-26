@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>APS Database</title>
+</head>
+<body>
+     <img src="static/aps_logo.png" alt="APS Logo", height="64px", align="left"><h1> Database</h1>
+     <br>
+
+    <p>Separate your search strings with commas:</p>
+    <form action="/" method="POST">
+        {{form.csrf_token}}
+        {{form.search_terms}}
+        {{form.submit}}
+    </form>
+    <br><br>
+
+    <table>
+      {% for d in dirs %}
+      <tr>
+        <td>{{d}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+</body>

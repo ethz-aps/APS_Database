@@ -41,5 +41,4 @@ Because people often remember who has worked on something but not what it was pr
 
 Possible solutions:
 
-* server-side script mksite.py that periodically checks the given data for changes. If there was a change it rebuilds the website.
-* alternatively: modify the existing php-script
+
