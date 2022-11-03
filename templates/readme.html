@@ -42,42 +42,7 @@
   </nav>
 
   <div class="container-fluid">
-    <div class="row mt-4">
-      <p>Chain multiple search strings with commas:</p>
-      <form class="d-flex" role="search" action="/" method="POST">
-          {{form.csrf_token}}
-          {{form.search_terms}}
-          {{form.submit}}
-      </form>
-    </div>
-
-
-    <div class="row mt-4">
-      {% if dirs|length > 1 %}
-        <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Path</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider">
-              {% for d in dirs %}
-              <tr>
-                <th scope="row">{{loop.index}}</th>
-                <td>{{d}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-        </table>
-        <h6 class="text-secondary">Download Link:</h6>
-        <p class="text-secondary"><small>{{dlink}}</small></p>
-      {% else %}
-        <p><strong>No results found.</strong></p>
-      {% endif %}
-    </div>
-
+    {{ md_text|markdown }}
   </div>
-
 
 </body>
