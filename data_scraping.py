@@ -79,10 +79,8 @@ class DataScraping():
 			return list(dirs)
 
 		dirs = [str(d) for d in dirs]
-		print(dirs)
-
-
+		#print(dirs)
 
 		dirs = [dirname for dirname in dirs if all(substring in dirname for substring in sterms)] #finds all entries that includes ALL search terms
-		print('found: ', dirs)
+		#print('found: ', dirs)
 		return dirs

@@ -54,7 +54,7 @@ def index():
 		else:
 			sterms = sstring.split(',')
 			sterms = [s.strip() for s in sterms]
-			print(sterms)
+			#print(sterms)
 			dirs = ds.search_results(sterms=sterms)
 
 			#generate download link:
