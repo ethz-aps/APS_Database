@@ -54,12 +54,13 @@ def index():
 		else:
 			sterms = sstring.split(',')
 			sterms = [s.strip() for s in sterms]
+			print(sterms)
 			dirs = ds.search_results(sterms=sterms)
 
 			#generate download link:
-			dlink = f"rsync -a --progress <your_username>@{conf['Server']['url']}:"
+			dlink = f"rsync -a --progress <your_username>@{conf['Server']['url']}"
 			for d in dirs:
-				dlink += f" :{d}"
+				dlink += f":{d} "
 			dlink += " ."
 
 		return render_template("index.html", form=form, dirs=dirs, dlink=dlink)

@@ -17,7 +17,7 @@
 
       <nav class="navbar bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <img src="static/APS_Logo.svg" alt="APS Logo" height="50">
           </a>
         </div>
@@ -53,7 +53,7 @@
 
 
     <div class="row mt-4">
-      {% if dirs|length > 1 %}
+      {% if dirs|length > 0 %}
         <table class="table table-sm">
             <thead>
               <tr>
@@ -65,7 +65,7 @@
               {% for d in dirs %}
               <tr>
                 <th scope="row">{{loop.index}}</th>
-                <td>{{d}}</td>
+                <td>{{d}} <small><a href="{{d}}">(Download)</a></small></td>
               </tr>
               {% endfor %}
             </tbody>

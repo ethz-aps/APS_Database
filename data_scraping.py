@@ -73,9 +73,16 @@ class DataScraping():
 		"""
 
 		dirs = self.scandir() #generator object
+		dirs = list(dirs)
 
 		if len(sterms) == 0: #no search term - return all data
 			return list(dirs)
 
-		dirs = [d for d in dirs if all(s in str(d) for s in sterms)] #finds all entries that includes ALL search terms
+		dirs = [str(d) for d in dirs]
+		print(dirs)
+
+
+
+		dirs = [dirname for dirname in dirs if all(substring in dirname for substring in sterms)] #finds all entries that includes ALL search terms
+		print('found: ', dirs)
 		return dirs
