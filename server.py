@@ -13,7 +13,7 @@ from configobj import ConfigObj
 from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from flask import render_template, redirect
+from flask import render_template, redirect, send_from_directory
 from flaskext.markdown import Markdown
 
 
@@ -41,7 +41,6 @@ class SearchForm(FlaskForm):
 	submit = SubmitField("Submit")
 
 
-
 #define the URLs routes for the Website
 @app.route("/",methods =['POST','GET'])
 def index():
@@ -66,6 +65,9 @@ def index():
 		return render_template("index.html", form=form, dirs=dirs, dlink=dlink)
 	return render_template("index.html", form=form)
 
+@app.route("/data/www/<path:path>")
+def send_file(path):
+	return send_from_directory("/data/www", path)
 
 @app.route("/readme")
 def readme():
@@ -74,5 +76,5 @@ def readme():
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=False)
 
