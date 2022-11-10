@@ -49,7 +49,7 @@ For easier reproducability I have followed [this article](https://www.digitaloce
 
 The corresponding config files can be found in the folder server_config.
 
-In addition the website is secured with a basic http authentication. Details on how this was setup here [here](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/). You can find the user/PW in our Wiki.
+In addition the website is secured with a basic http authentication. Details on how this was setup here [here](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/). You can find the user/PW in our Wiki (Guide to the APS servers).
 
 #### The flask webserver python files
 
