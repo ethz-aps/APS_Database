@@ -25,9 +25,6 @@ server {
     listen 80;
     server_name data.aps.ee.ethz.ch www.data.aps.ee.ethz.ch;
 
-    auth_basic "APS Database Access - Ask Helton or Ulrike for the password.";
-    auth_basic_user_file /etc/apache2/.htpasswd;
-
     root /data/www/;
 
     location / {

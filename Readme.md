@@ -47,7 +47,9 @@ On the APS webserver reachable at data.aps.ee.ethz.ch the code is deployed throu
 If you have never done this you might struggle a bit, but the learning curve is steep.
 For easier reproducability I have followed [this article](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04) on how to employ our flask application with uWSGI and Nginx.
 
-The corresponding config files can be found in the folder server_config
+The corresponding config files can be found in the folder server_config.
+
+In addition the website is secured with a basic http authentication. Details on how this was setup here [here](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/). You can find the user/PW in our Wiki.
 
 #### The flask webserver python files
 
@@ -66,3 +68,6 @@ Upon pressing the search button the data-folder is searched for all files that m
 
 <medeiros@aps.ee.ethz.ch>,
 <dorfer@aps.ee.ethz.ch>
+
+
+apsdatabase!
