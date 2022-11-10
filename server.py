@@ -61,9 +61,12 @@ def index():
 			for d in dirs:
 				dlink += f":{d} "
 			dlink += " ."
+	else:
+		dirs = ds.search_results(sterms=[])
+		dlink = f"rsync -a --progress <your_username>@{conf['Server']['url']}:/{conf['Data']['data_dir']} ."
 
-		return render_template("index.html", form=form, dirs=dirs, dlink=dlink)
-	return render_template("index.html", form=form)
+	return render_template("index.html", form=form, dirs=dirs, dlink=dlink)
+	#return render_template("index.html", form=form)
 
 @app.route("/data/www/<path:path>")
 def send_file(path):

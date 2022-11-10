@@ -72,15 +72,24 @@ class DataScraping():
 
 		"""
 
+
 		dirs = self.scandir() #generator object
 		dirs = list(dirs)
+		dirs = [str(d) for d in dirs]
 
 		if len(sterms) == 0: #no search term - return all data
 			return list(dirs)
 
-		dirs = [str(d) for d in dirs]
+		#make all search terms lowercase
+		sterms = [s.lower() for s in sterms]
+
+		#make all paths lowercase but keep the original also
+		dirs = [[d.lower(), d] for d in dirs]
+		
+
+		
 		#print(dirs)
 
-		dirs = [dirname for dirname in dirs if all(substring in dirname for substring in sterms)] #finds all entries that includes ALL search terms
+		dirs = [dirname[1] for dirname in dirs if all(substring in dirname[0] for substring in sterms)] #finds all entries that includes ALL search terms
 		#print('found: ', dirs)
 		return dirs
